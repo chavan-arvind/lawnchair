@@ -25,6 +25,7 @@ import app.lawnchair.preferences.preferenceManager
 import app.lawnchair.ui.preferences.LocalNavController
 import app.lawnchair.ui.preferences.components.GridOverridesPreview
 import app.lawnchair.ui.preferences.components.controls.SliderPreference
+import app.lawnchair.ui.preferences.components.controls.SwitchPreference
 import app.lawnchair.ui.preferences.components.layout.PreferenceGroup
 import app.lawnchair.ui.preferences.components.layout.PreferenceLayout
 import com.android.launcher3.LauncherAppState
@@ -78,6 +79,11 @@ fun HomeScreenGridPreferences(
                 adapter = rows.asPreferenceAdapter(),
                 step = 1,
                 valueRange = 3..maxGridSize,
+            )
+            SwitchPreference(
+                adapter = prefs.infiniteScroll.getAdapter(),
+                label = stringResource(id = R.string.infinite_scroll_label),
+                description = stringResource(id = R.string.infinite_scroll_description),
             )
         }
 

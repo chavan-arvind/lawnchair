@@ -127,6 +127,11 @@ fun HomeScreenPreferences(
                     label = stringResource(id = R.string.show_dot_pagination_label),
                     description = stringResource(id = R.string.show_dot_pagination_description),
                 )
+                SwitchPreference(
+                    adapter = prefs.infiniteScroll.getAdapter(),
+                    label = stringResource(id = R.string.infinite_scroll_label),
+                    description = stringResource(id = R.string.infinite_scroll_description),
+                )
             }
         }
         PreferenceGroup(heading = stringResource(id = R.string.popup_menu)) {

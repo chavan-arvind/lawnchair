@@ -195,6 +195,12 @@ class LawnchairLauncher : QuickstepLauncher() {
         showQuickstepWarningIfNecessary()
 
         reloadIconsIfNeeded()
+
+        // Observe the infiniteScroll preference and update the launcher accordingly
+        prefs.infiniteScroll.subscribeChanges(this) { infiniteScrollEnabled ->
+            // Add logic to handle infinite scroll based on the new preference
+            // For example, update the workspace or other relevant components
+        }
     }
 
     override fun collectStateHandlers(out: MutableList<StateManager.StateHandler<*>>) {
